@@ -9,7 +9,9 @@ public class AssertableResponse {
 
     private final Response register;
 
-    public void shouldHave(Condition condition) {
+    public AssertableResponse shouldHave(Condition condition) {
+        condition.check(register);
 
+        return this;
     }
 }
