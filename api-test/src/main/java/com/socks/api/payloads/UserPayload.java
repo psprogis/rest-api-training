@@ -13,22 +13,18 @@ import javax.annotation.Generated;
 @Generated("com.robohorse.robopojogenerator")
 public class UserPayload{
 
-	@JsonProperty("password")
-	private String password;
-
-	@JsonProperty("email")
-	private String email;
-
 	@JsonProperty("username")
 	private String username;
 
-	@Override
- 	public String toString(){
-		return 
-			"UserPayload{" + 
-			"password = '" + password + '\'' + 
-			",email = '" + email + '\'' + 
-			",username = '" + username + '\'' + 
-			"}";
-		}
+	@JsonProperty("password")
+	private String password;
+
+	@JsonProperty("firstName")
+	private String firstName;
+
+	@JsonProperty("lastName")
+	private String lastName;
+
+	@JsonProperty("email")
+	private String email;
 }
