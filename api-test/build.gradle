@@ -23,3 +23,15 @@ dependencies {
 
     testCompile "org.testng:testng:$testNgVersion"
 }
+
+test {
+    useTestNG()
+
+    testLogging {
+        events "PASSED", "FAILED", "SKIPPED"
+        showStandardStreams = true
+        exceptionFormat = 'full'
+    }
+
+    test.outputs.upToDateWhen { false }
+}
