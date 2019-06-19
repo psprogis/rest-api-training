@@ -16,4 +16,12 @@ public class BodyFieldCondition implements Condition {
                 .then()
                 .assertThat().body(jsonPath, matcher);
     }
+
+    @Override
+    public String toString() {
+        return "BodyFieldCondition{" +
+                "jsonPath='" + jsonPath + '\'' +
+                ", matcher=" + matcher +
+                '}';
+    }
 }
