@@ -1,11 +1,13 @@
 package com.socks.api.services;
 
+import com.socks.api.ProjectConfig;
 import io.restassured.RestAssured;
 import io.restassured.filter.Filter;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
+import org.aeonbits.owner.ConfigFactory;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,9 +22,9 @@ public class ApiService {
     }
 
     private List<Filter> getFilters() {
-        Boolean enableLog = Boolean.valueOf(System.getProperty("logging", "true"));
+        final ProjectConfig config = ConfigFactory.create(ProjectConfig.class, System.getProperties());
 
-        if (enableLog) {
+        if (config.logging()) {
             return Arrays.asList(new RequestLoggingFilter(), new ResponseLoggingFilter());
         }
 
