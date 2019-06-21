@@ -42,3 +42,10 @@ test {
 
     test.outputs.upToDateWhen { false }
 }
+
+allure {
+    version = '2.8.1'
+    aspectjweaver = true
+    configuration = 'compile'
+    autoconfigure = true
+}
