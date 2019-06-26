@@ -19,4 +19,7 @@ node {
             reportBuildPolicy: 'ALWAYS',
             results: [[path: 'api-test/build/allure-results']]
     ])
+
+    // TODO: add baseUrl as a parameter
+    // TODO: rename JenkinsFile -> Jenkinsfile
 }
