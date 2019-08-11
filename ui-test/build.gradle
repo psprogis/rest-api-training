@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+
+version 'unspecified'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    testNgVersion = '6.13'
+}
+
+dependencies {
+    compile project(":api-test")
+    compile group: 'com.codeborne', name: 'selenide', version: '4.14.2'
+    testCompile "org.testng:testng:$testNgVersion"
+}
