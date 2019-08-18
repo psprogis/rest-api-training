@@ -27,7 +27,6 @@ dependencies {
     compile group: 'org.aeonbits.owner', name: 'owner', version: '1.0.10'
     compile group: 'io.qameta.allure', name: 'allure-rest-assured', version: '2.12.1'
 
-
     testCompile "org.testng:testng:$testNgVersion"
 }
 
