@@ -2,10 +2,6 @@ plugins {
     id 'java'
 }
 
-version 'unspecified'
-
-sourceCompatibility = 1.8
-
 repositories {
     mavenCentral()
 }
@@ -18,4 +14,11 @@ dependencies {
     compile project(":api-test")
     compile group: 'com.codeborne', name: 'selenide', version: '4.14.2'
     testCompile "org.testng:testng:$testNgVersion"
+}
+
+allure {
+    version = '2.8.1'
+    aspectjweaver = true
+    configuration = 'compile'
+    autoconfigure = true
 }
