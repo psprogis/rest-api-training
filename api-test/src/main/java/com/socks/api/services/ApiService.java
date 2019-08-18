@@ -19,6 +19,7 @@ public class ApiService {
     protected RequestSpecification setup() {
         return RestAssured
                 .given().contentType(ContentType.JSON)
+                // .accept(ContentType.JSON)
                 .filters(getFilters());
     }
 
