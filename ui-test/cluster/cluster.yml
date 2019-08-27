@@ -1,0 +1,28 @@
+---
+- hosts: selenoid-nodes
+  become: yes
+  vars:
+    selenoid_version: 1.9.1
+    selenoid_cm_version: 1.5.7
+    selenoid_docker_api_version: 1.35
+    selenoid_limit: 4
+    selenoid_tmpfs: 128
+    selenoid_config_dir: "{{ ansible_env.HOME }}/selenoid"
+    selenoid_listen_port: 4445
+    selenoid_browsers_last_version: 2
+    selenoid_time_zone: Europe/Kiev
+    selenoid_browsers:
+      - chrome:74.0
+    roles:
+      - selenoid-ansible
+
+- hosts: ggr-nodes
+  become: yes
+  vars:
+    grid_router_version: 1.6.4
+    grid_router_path: "{{ ansible_env.HOME }}/grid-router"
+    grid_router_quota_path: "{{ ansible_env.HOME }}/grid-router/quota"
+    grid_router_port: 4444
+    quota_file: "ggr/quota/selenoid.xml"
+  roles:
+    - ggr-ansible
