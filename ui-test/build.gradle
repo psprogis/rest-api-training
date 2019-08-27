@@ -25,6 +25,14 @@ test {
     useTestNG()
 
     systemProperties System.getProperties()
+
+    testLogging {
+        events "PASSED", "FAILED", "SKIPPED"
+        showStandardStreams = true
+        exceptionFormat = 'full'
+    }
+
+    test.outputs.upToDateWhen { false }
 }
 
 allure {
