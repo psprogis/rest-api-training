@@ -21,11 +21,11 @@ dependencies {
     testCompile "org.testng:testng:$testNgVersion"
 }
 
-//test {
-//    useTestNG()
-//
-//    systemProperties System.getProperties()
-//}
+test {
+    useTestNG()
+
+    systemProperties System.getProperties()
+}
 
 allure {
     version = '2.8.1'
