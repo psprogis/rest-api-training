@@ -18,7 +18,7 @@ public class SelenoidDriverProvider implements WebDriverProvider {
         DesiredCapabilities browser = new DesiredCapabilities();
 
         browser.setBrowserName("chrome");
-        browser.setVersion("74.0");
+        browser.setVersion("75.0");
         browser.setCapability("enableVNC", true);
 
         try {
